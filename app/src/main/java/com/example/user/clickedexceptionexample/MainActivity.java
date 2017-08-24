@@ -5,6 +5,10 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
 
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ScheduledExecutorService;
+
 
 /**
  * MainActivity.class
@@ -40,13 +44,16 @@ public class MainActivity extends Activity {
 //            nullPointerExceptionOccur(null);
 
 //            @ExceptionHead ArrayIndexOutOfBoundsException
-//            ArrayIndexOutOfBoundsExceptionOccur();
+//            arrayIndexOutOfBoundsExceptionOccur();
 
 //            @ExceptionHead NumberFormatException
-//            NumberFormatExceptionOccur("abc");
+//            numberFormatExceptionOccur("abc");
 
 //            @ExceptionHead ClassCastException
-//            ClassCastExceptionOccur();
+//            classCastExceptionOccur();
+
+//            @ExceptionHead ClassCastException
+//            runtimeException();
 
         } catch (NullPointerException e) {
             Toast.makeText(getApplicationContext(), "NullPointerException", Toast.LENGTH_LONG).show();
@@ -56,6 +63,8 @@ public class MainActivity extends Activity {
             Toast.makeText(getApplicationContext(), "NumberFormatException", Toast.LENGTH_LONG).show();
         } catch (ClassCastException e) {
             Toast.makeText(getApplicationContext(), "ClassCastException", Toast.LENGTH_LONG).show();
+        } catch (RuntimeException e) {
+            Toast.makeText(getApplicationContext(), "RuntimeException", Toast.LENGTH_LONG).show();
         }
     }//end exceptionButtonClick
 
@@ -63,18 +72,22 @@ public class MainActivity extends Activity {
         System.out.println(value.toString());
     }
 
-    private void ArrayIndexOutOfBoundsExceptionOccur() {
+    private void arrayIndexOutOfBoundsExceptionOccur() {
         int[] strValues = new int[0];
         strValues[0] = 0;
     }
 
-    private void NumberFormatExceptionOccur(String beforeChangeStr) {
+    private void numberFormatExceptionOccur(String beforeChangeStr) {
         int afterChangeInt = Integer.parseInt(beforeChangeStr);
     }
 
-    private void ClassCastExceptionOccur() {
+    private void classCastExceptionOccur() {
         Exception exception = new Exception();
         NullPointerException nullPointerException = (NullPointerException) exception;
+    }
+
+    private void runtimeException() {
+        throw new RuntimeException();
     }
 
 
