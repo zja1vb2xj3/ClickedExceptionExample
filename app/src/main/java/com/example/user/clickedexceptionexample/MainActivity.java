@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
 
-
 /**
  * MainActivity.class
  * Activity를 상속 받고 있습니다.
@@ -28,7 +27,7 @@ public class MainActivity extends Activity {
         exceptionButton = (Button) findViewById(R.id.exceptionButton);
 
         exceptionButton.setOnClickListener(v -> exceptionButtonClick());
-    }
+    }//end onCreate
 
     /**
      * exceptionButton을 Click하게되면 작동되는 메서드 입니다.
