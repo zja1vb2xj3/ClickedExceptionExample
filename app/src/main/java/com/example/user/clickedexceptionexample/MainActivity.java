@@ -5,10 +5,6 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
 
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Executor;
-import java.util.concurrent.ScheduledExecutorService;
-
 
 /**
  * MainActivity.class
@@ -68,27 +64,41 @@ public class MainActivity extends Activity {
         }
     }//end exceptionButtonClick
 
+    /**
+     * nullPointerException을 발생시키는 메서드 입니다.
+     */
     private <T> void nullPointerExceptionOccur(T value) {
         System.out.println(value.toString());
     }
 
+    /**
+     * arrayIndexOutOfBoundsException 발생시키는 메서드 입니다.
+     */
     private void arrayIndexOutOfBoundsExceptionOccur() {
         int[] strValues = new int[0];
         strValues[0] = 0;
     }
 
+    /**
+     * numberFormatException 발생시키는 메서드 입니다.
+     */
     private void numberFormatExceptionOccur(String beforeChangeStr) {
         int afterChangeInt = Integer.parseInt(beforeChangeStr);
     }
 
+    /**
+     * classCastException 발생시키는 메서드 입니다.
+     */
     private void classCastExceptionOccur() {
         Exception exception = new Exception();
         NullPointerException nullPointerException = (NullPointerException) exception;
     }
 
+    /**
+     * runtimeException 발생시키는 메서드 입니다.
+     */
     private void runtimeException() {
         throw new RuntimeException();
     }
 
-
-}
+}//end MainActivity.class
